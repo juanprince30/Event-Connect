@@ -1,7 +1,9 @@
 package bf.uv.eventconnect;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        Log.d("TAG","onCreate appelle");
+        Button commencer=findViewById(R.id.button2);
+        commencer.setOnClickListener(v->{
+            Log.d("TAG","Boutton clicker dans lapp pour migrer vers la second Activity");
+            Intent intent=new Intent(MainActivity.this, SecondActivity.class);
+            startActivity(intent);
+        });
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

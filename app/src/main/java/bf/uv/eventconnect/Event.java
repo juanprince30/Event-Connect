@@ -12,6 +12,11 @@ public class Event {
     public String date;
     public String lieu;
     public String description;
+    public String imagePath;
+    public double longitude;
+    public double latitude;
+    public String organisateur;
+    public String category;
 
     public long createdAt;
 } 
